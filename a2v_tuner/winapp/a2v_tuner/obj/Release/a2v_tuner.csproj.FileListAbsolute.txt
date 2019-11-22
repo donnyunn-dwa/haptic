@@ -1,0 +1,12 @@
+D:\donnyunn\haptic\sw\a2v_tuner_2\a2v_tuner\bin\Release\a2v_tuner.exe.config
+D:\donnyunn\haptic\sw\a2v_tuner_2\a2v_tuner\bin\Release\a2v_tuner.exe
+D:\donnyunn\haptic\sw\a2v_tuner_2\a2v_tuner\bin\Release\a2v_tuner.pdb
+D:\donnyunn\haptic\sw\a2v_tuner_2\a2v_tuner\obj\Release\a2v_tuner.ActuatorSettingArea.resources
+D:\donnyunn\haptic\sw\a2v_tuner_2\a2v_tuner\obj\Release\a2v_tuner.ControlArea.resources
+D:\donnyunn\haptic\sw\a2v_tuner_2\a2v_tuner\obj\Release\a2v_tuner.Form1.resources
+D:\donnyunn\haptic\sw\a2v_tuner_2\a2v_tuner\obj\Release\a2v_tuner.GraphArea.resources
+D:\donnyunn\haptic\sw\a2v_tuner_2\a2v_tuner\obj\Release\a2v_tuner.Properties.Resources.resources
+D:\donnyunn\haptic\sw\a2v_tuner_2\a2v_tuner\obj\Release\a2v_tuner.SoundTuningArea.resources
+D:\donnyunn\haptic\sw\a2v_tuner_2\a2v_tuner\obj\Release\a2v_tuner.csproj.GenerateResource.Cache
+D:\donnyunn\haptic\sw\a2v_tuner_2\a2v_tuner\obj\Release\a2v_tuner.exe
+D:\donnyunn\haptic\sw\a2v_tuner_2\a2v_tuner\obj\Release\a2v_tuner.pdb
