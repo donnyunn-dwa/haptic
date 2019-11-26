@@ -1,4 +1,5 @@
 #include "a2v_controller.h"
+#include <math.h>
 
 float hanning_window[NFFT] = {
 	0.000000000,0.000037649,0.000150591,0.000338808,0.000602272,0.000940944,0.001354772,0.001843694,
@@ -81,17 +82,17 @@ int awfa_l[19] = {
 int sqrtI2I( int v )
 {
     int t, q, b, r;
-    r = v;           				// r = v - x²
-    b = 0x40000000;  				// a²
+    r = v;           				// r = v - xï¿½
+    b = 0x40000000;  				// aï¿½
     q = 0;           				// 2ax
     while( b > 0 )				
     {				
-        t = q + b;   				// t = 2ax + a²
+        t = q + b;   				// t = 2ax + aï¿½
         q >>= 1;     				// if a' = a/2, then q' = q/2
-        if( r >= t ) 				// if (v - x²) >= 2ax + a²
+        if( r >= t ) 				// if (v - xï¿½) >= 2ax + aï¿½
         {				
-            r -= t;  				// r' = (v - x²) - (2ax + a²)
-            q += b;  				// if x' = (x + a) then ax' = ax + a², thus q' = q' + b
+            r -= t;  				// r' = (v - xï¿½) - (2ax + aï¿½)
+            q += b;  				// if x' = (x + a) then ax' = ax + aï¿½, thus q' = q' + b
         }				
         b >>= 2;     				// if a' = a/2, then b' = b / 4
     }
@@ -227,22 +228,22 @@ void adaptEq(int *fft_duPow,int *SoundFreq_t)
 	fft_duPow[i++] = 0;
 	
 	for(;i < CNT_EQ1; i++)
-		fft_duPow[i] = fft_duPow[i] + (fft_duPow[i] * (SoundFreq_t[0] - 128) / 128);
+		fft_duPow[i] = fft_duPow[i] + (int)(fft_duPow[i] * (exp(SoundFreq_t[0] / 128) - 2));
 
 	for(;i < CNT_EQ2; i++)
-		fft_duPow[i] = fft_duPow[i] + (fft_duPow[i] * (SoundFreq_t[1] - 128) / 128);
+		fft_duPow[i] = fft_duPow[i] + (int)(fft_duPow[i] * (exp(SoundFreq_t[1] / 128) - 2));
 
 	for(;i < CNT_EQ3; i++)
-		fft_duPow[i] = fft_duPow[i] + (fft_duPow[i] * (SoundFreq_t[2] - 128) / 128);
+		fft_duPow[i] = fft_duPow[i] + (int)(fft_duPow[i] * (exp(SoundFreq_t[2] / 128) - 2));
 
 	for(;i < CNT_EQ4; i++)
-		fft_duPow[i] = fft_duPow[i] + (fft_duPow[i] * (SoundFreq_t[3] - 128) / 128);
+		fft_duPow[i] = fft_duPow[i] + (int)(fft_duPow[i] * (exp(SoundFreq_t[3] / 128) - 2));
 
 	for(;i < CNT_EQ5; i++)
-		fft_duPow[i] = fft_duPow[i] + (fft_duPow[i] * (SoundFreq_t[4] - 128) / 128);
+		fft_duPow[i] = fft_duPow[i] + (int)(fft_duPow[i] * (exp(SoundFreq_t[4] / 128) - 2));
 
 	for(;i < CNT_EQ6; i++)
-		fft_duPow[i] = fft_duPow[i] + (fft_duPow[i] * (SoundFreq_t[5] - 128) / 128);
+		fft_duPow[i] = fft_duPow[i] + (int)(fft_duPow[i] * (exp(SoundFreq_t[5] / 128) - 2));
 
 	for(;i < NFFT2; i++)
 		fft_duPow[i] = 0;
