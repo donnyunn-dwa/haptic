@@ -81,10 +81,10 @@ void I2C2_write_RAM(uint8_t* pData, uint16_t addr, uint16_t len);
 #define ADC_CH1_GPIO_Port GPIOA
 /* USER CODE BEGIN Private defines */
 
-#define NFFT 512				// FFT Data N
+#define NFFT 256				// FFT Data N
 #define NFFT2 (NFFT/2)
 #define NFFT3_4 ((NFFT*3)/4)	// Twiddle factor Data N	
-#define NOVLP 32
+#define NOVLP 16
 
 /* USER CODE END Private defines */
 

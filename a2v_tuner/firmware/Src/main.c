@@ -350,7 +350,7 @@ int main(void)
 					dw7914_go(&hi2c1);	
 				}
 				if(runFlag_R) {		
-					dw7914_go(&hi2c2);	
+					dw7914_go(&hi2c1);	
 				}
 
     			stage = STAGE_IDLE;
