@@ -302,7 +302,7 @@ int vibFreqGenSet(parameterA2V *dw)
 
 	if(loudness_cmp < (dw->in_loudnessThres - HYST)) {
 		runFlag = 0;
-	} else {
+	} else if(loudness_cmp > (dw->in_loudnessThres + HYST)) {
 		runFlag = 1;
 	}
 
